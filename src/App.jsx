@@ -4,18 +4,20 @@ const App = () => {
     { id: 1, name: 'John', age: 20},
     { id: 2, name: 'Peter', age: 30}
   ]
+
+  const listFriends = [];
+
+  for (let i = 0; i < friends.length; i++){
+    listFriends.push(
+      <li key={friends[i].id}>{friends[i].name} {friends[i].age}</li>
+    )
+  }
+
   return (
     <div>
       <h1>Friends</h1>
       <ul>
-        {
-          // friends.map(friend => 
-          //   <li key={friend.id}>{friend.name} {friend.age}</li>
-          // )
-          friends.map((friend, index) =>
-            <li key={friend.index}>{friend.name} {friend.age}</li>
-          )
-        }
+        {listFriends}
       </ul>
     </div>
   )
