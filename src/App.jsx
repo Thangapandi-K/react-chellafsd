@@ -9,8 +9,11 @@ const App = () => {
       <h1>Friends</h1>
       <ul>
         {
-          friends.map(friend => 
-            <li key={friend.id}>{friend.name} {friend.age}</li>
+          // friends.map(friend => 
+          //   <li key={friend.id}>{friend.name} {friend.age}</li>
+          // )
+          friends.map((friend, index) =>
+            <li key={friend.index}>{friend.name} {friend.age}</li>
           )
         }
       </ul>
