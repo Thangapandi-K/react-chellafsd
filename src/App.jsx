@@ -1,10 +1,14 @@
 import Hello from "./components/Hello";
 
 const App = () => {
+
+  const name = 'Chella';
+
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello />
+      <Hello 
+        name={name}
+      />
     </div>
   )
 }

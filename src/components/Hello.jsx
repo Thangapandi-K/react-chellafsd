@@ -1,5 +1,9 @@
-const Hello = () => {
-    return <h1>Hello World!</h1>
+const Hello = (props) => {
+    return (
+        <div>
+            <p>Hello {props.name}!</p>
+        </div>
+    )
 }
 
 export default Hello;
