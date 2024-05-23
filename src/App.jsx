@@ -1,26 +1,12 @@
 const App = () => {
 
-  const friends = [
-    { id: 1, name: 'John', age: 20},
-    { id: 2, name: 'Peter', age: 30}
-  ]
+  const isLoggedIn = true;
 
-  const listFriends = [];
-
-  for (let i = 0; i < friends.length; i++){
-    listFriends.push(
-      <li key={friends[i].id}>{friends[i].name} {friends[i].age}</li>
-    )
+  if (isLoggedIn) {
+    return <h1>Welcome Back!</h1>
+  } else {
+    return <h1>Please Log In</h1>
   }
-
-  return (
-    <div>
-      <h1>Friends</h1>
-      <ul>
-        {listFriends}
-      </ul>
-    </div>
-  )
 }
 
 export default App
