@@ -1,47 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useState } from 'react'
 
-class Hello extends Component {
-  
-//lifecycle method: called when the component is mounted
+const App = () => {
 
-  componentDidMount() {
-    console.log('Hello component mounted');
+  let [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
   }
 
-  componentWillUnmount() {
-    console.log('Hello component unmounted');
+  const handleDecrement = () => {
+    if (count != 0)
+    setCount(count - 1);
   }
 
-  render() {
-    return (
-      <h1>Hello World!</h1>
-    )
+  const handleReset = () => {
+    setCount(0);
   }
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  )
 }
 
-export class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      showHello: true
-    }
-  }
-
-  handleToggle = () => {
-    this.setState({
-      showHello: !this.state.showHello
-    })
-  }
-
-  render() {
-    return (
-      <div>
-          <button onClick={this.handleToggle}>Toggle Hello</button>
-          { this.state.showHello && <Hello /> }
-      </div>
-    )
-  }
-}
-
-export default App;
+export default App
