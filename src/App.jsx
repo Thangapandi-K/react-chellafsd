@@ -6,11 +6,10 @@ const App = () => {
 
   let [count, setCount] = useState(0);
 
-  //runs only once when the component is mounted
-
+  //runs when the component is mounted and count is updated
   useEffect(() => {
     console.log('component mounted');
-  }, []);
+  }, [count]);
 
   const handleIncrement = () => {
     setCount(count + 1);
