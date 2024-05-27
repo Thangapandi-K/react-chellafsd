@@ -1,9 +1,16 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react'
 
 const App = () => {
 
   let [count, setCount] = useState(0);
+
+  //runs when the component is mounted
+  // and whenever the state changes (any state within the component)
+  useEffect(() => {
+    console.log('component mounted');
+  });
 
   const handleIncrement = () => {
     setCount(count + 1);
