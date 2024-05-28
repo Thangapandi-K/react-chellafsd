@@ -1,8 +1,14 @@
 import React from 'react'
+import History from '../components/History'
 
-const Counter = ({ count }) => {
+const Counter = ({ count, history }) => {
   return (
-    <h1>Counter: {count}</h1>
+    <div>
+        <h1>Counter: {count}</h1>
+        <History 
+            history = {history}
+        />
+    </div>
   )
 }
 
