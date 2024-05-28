@@ -1,5 +1,25 @@
+
+
+const Bin = ( {user} ) =>{
+  return(
+    <div>
+      <p>Logged In User: { user }</p>
+    </div>
+  )
+}
+
 const App = () => {
-  return <h1>Hello, World!</h1>
+
+  const loggedInUser = "John Doe";
+
+  return(
+    <div>
+      <h1>Data from App to Bin</h1>
+      <Bin 
+        user={loggedInUser}
+      />
+    </div>
+  )
 }
 
 export default App;
