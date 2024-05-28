@@ -1,23 +1,33 @@
+import { useState } from "react";
 
 
-const Bin = ( {user} ) =>{
+const Bin = ({ sendData }) =>{
+
+  const loggedInUser = "John Doe";
+
   return(
     <div>
-      <p>Logged In User: { user }</p>
+      <h1>Data from Bin to App</h1>
+      <p>Data in Bin: {loggedInUser}</p>
+      <button onClick={() => { sendData(loggedInUser) }}>Send Data</button>
     </div>
   )
 }
 
 const App = () => {
 
-  const loggedInUser = "John Doe";
+  const [user, setUser] = useState('');
+
+  const receiveData = (loggedInUser) => {
+    setUser(loggedInUser);
+  }
 
   return(
     <div>
-      <h1>Data from App to Bin</h1>
-      <Bin 
-        user={loggedInUser}
+      <Bin
+        sendData={receiveData}
       />
+      <p>Data in App: { user }</p>
     </div>
   )
 }
