@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Link, NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -10,14 +10,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div><a href="/register">Register</a> | <a href="/login">Log In</a></div>
+        element: <div><Link to="./register">Register</Link> &nbsp;&nbsp; | &nbsp;&nbsp;<Link to="/login"> Log In</Link></div>
       },
       {
-        path: "register",
+        path: "/register",
         element: <Register />
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />
       }
     ]
