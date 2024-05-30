@@ -1,19 +1,21 @@
-import { Link, NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Note from "./pages/Note";
+import { loader as notesLoader } from "./pages/Home";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
+    loader: notesLoader
   },
   {
     path: "/notes/:id",
-    element: <Note />
+    element: <Note />,
+    loader: notesLoader
   }
 ]);
-
 
 const App = () => {
   return <RouterProvider router={router} />
