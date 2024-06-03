@@ -1,31 +1,27 @@
-import { useState } from "react";
-import { useRef } from "react";
+import { useReducer } from "react";
+import { countReducer, initialState } from "./reducers/countReducer";
+
 
 
 const App = () => {
 
-  const [state, setState] = useState(0);
 
-  const countRef = useRef(0);
+ const [state, dispatch] = useReducer(countReducer, initialState);
 
-  const handleRefIncrement = () => {
-    countRef.current += 1;
-    console.log(countRef.current);
+  const handleIncrement = () => {
+    dispatch({ type: "Increment" });
   }
 
-  const handleStateIncrement = () => {
-    setState(state + 1);
+  const handleDecrement = () => {
+    dispatch({ type: "Decrement" });
   }
-
-  console.log("Component rendered")
 
   return (
-    <>
-    <h1>state Count : {state} </h1>
-    <h1>Ref Count : {countRef.current} </h1>
-    <button onClick={handleRefIncrement}>Ref Increment</button>
-    <button onClick={handleStateIncrement}>State Increment</button>
-    </>
+    <div>
+      <h1>Count: { state.count } </h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+    </div>
   )
 }
 
