@@ -1,40 +1,30 @@
 import { useState } from "react";
 import { useRef } from "react";
 
+
 const App = () => {
 
   const [state, setState] = useState(0);
 
-  // create a reference using useRef hook
-  const inputRef = useRef(null);
+  const countRef = useRef(0);
 
-
-
-  const handleClick = () => {
-      // focus the input element here
-      //console.log(inputRef.current.value);
-      inputRef.current.focus();
-      
-     
-
+  const handleRefIncrement = () => {
+    countRef.current += 1;
+    console.log(countRef.current);
   }
 
-  const handleChange = () => {
-
-    inputRef.current.value = "Hello World !"
-    setState(state +1);
+  const handleStateIncrement = () => {
+    setState(state + 1);
   }
 
-  console.log("rendering");
+  console.log("Component rendered")
 
   return (
     <>
-      <input 
-        type="text"
-        ref={inputRef} 
-      />
-      <button onClick={handleClick}>Focus Input</button>
-      <button onClick={handleChange}>Change Value</button>
+    <h1>state Count : {state} </h1>
+    <h1>Ref Count : {countRef.current} </h1>
+    <button onClick={handleRefIncrement}>Ref Increment</button>
+    <button onClick={handleStateIncrement}>State Increment</button>
     </>
   )
 }
