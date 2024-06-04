@@ -1,26 +1,15 @@
-import { useReducer } from "react";
-import { countReducer, initialState } from "./reducers/countReducer";
+import Counter1 from "./components/Counter1";
+import Counter2 from "./components/Counter2";
 
 
 
 const App = () => {
 
 
- const [state, dispatch] = useReducer(countReducer, initialState);
-
-  const handleIncrement = () => {
-    dispatch({ type: "Increment" });
-  }
-
-  const handleDecrement = () => {
-    dispatch({ type: "Decrement" });
-  }
-
-  return (
+   return (
     <div>
-      <h1>Count: { state.count } </h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      <Counter1 />
+      <Counter2 />
     </div>
   )
 }
