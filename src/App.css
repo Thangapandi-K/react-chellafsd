@@ -1,0 +1,13 @@
+.square {
+    border: 1px solid darkgray;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    font-size: 48px;
+    text-align: center;
+    color: cadetblue;
+}
+.row:after {
+
+}
+
